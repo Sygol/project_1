@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+   background-image: linear-gradient(to right, rgba(86,204,242, 0.7), rgba(47,128,237, 0.7)), url(background.jpg);
+   background-size: cover;
+   color: white;
+}
+
+
+header{
+  margin: 10% auto;
+  font-size: 5rem;
+  width: 60%;
+  text-align: center;
+}
+
+h2{
+  margin-bottom: 4rem;
+  animation: moveInRight 1s ease-out;
+}
+
+button{
+  color: #777;
+  padding: 1.5rem;
+  font-size: 2.2rem;
+  width: 30%;
+  background: white;
+  border-radius: 20rem;
+  margin-bottom: 4rem;
+  border: none;
+  transition: transform .3s ease-out;
+
+  }
+
+.button_one{
+  animation: moveInUp 1s ease-out 0.25s;
+  animation-fill-mode: backwards;
+}
+
+.button_two{
+  animation: moveInUp 1s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+button:hover{
+  transform: translateY(-0.4rem);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+
+
+@keyframes moveInRight {
+	 0% {
+		 opacity: 0;
+		 transform: translateX(-10rem);
+	 }
+
+	 80% {
+		 opacity: 1;
+		 transform: translateX(1rem);
+	 }
+
+	 100% {
+		 opacity: 1;
+		 transform: translateX(0);
+	 }
+}
+
+@keyframes moveInUp {
+	 0% {
+		 opacity: 0;
+		 transform: translateY(3rem);
+	 }
+
+
+	 100% {
+		 opacity: 1;
+		 transform: translateY(0);
+	 }
+}

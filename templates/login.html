@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+
+<div class="form login_form">
+  {% if session.user_id %}
+    <h2 class="header header__login">You are already logged in.</h2>
+  {% else %}
+
+    <h2 class="header header__login">Login here</h2>
+    <form action="{{ url_for('login', next=request.args.get('next')) }}" method="POST">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="text" name="email" class="form-control form-control-lg" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Password" required>
+      </div>
+      <input type = submit value = "Submit" class="btn btn-primary btn-lg">
+    </form>
+  {% endif %}
+</div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-danger" role="alert" id="user__alert">
+      {{ messages.0 }}
+    </div>
+
+  {% endif %}
+{% endwith %}
+
+{% endblock %}

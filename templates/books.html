@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class="criteria">
+  <span class="criterium">ISBN: <b>{% if isbn %}{{isbn}} {% else %} - {% endif %}</b></span>
+  <span class="criterium">Author: <b>{% if author %}{{author}} {% else %} - {% endif %}</b> </span>
+  <span class="criterium">Title: <b>{% if title %}{{title}} {% else %} - {% endif %}</b> </span>
+  <a href="{{ url_for('books_search') }}">
+    <button class="btn btn-primary btn-sm change__criteria" style="margin-top: -1rem;">Change criteria</button>
+  </a>
+</div>
+
+{% if list_of_books|length %}
+  <h2 class="header header__books">List of books</h2>
+
+  <div class="list-group">
+    {% for book in list_of_books %}
+      <a href="{{ url_for('book', book_id=book.id) }}" class="list-group-item"><span class="book__title">{{book.title}}</span> by<span class="book__author"> {{book.author}}</span> ({{book.year}})</a>
+    {% endfor %}
+  </div>
+
+{% else %}
+    <h2 class="header header__books">We don't have any book in our database that meets your criteria</h2>
+{% endif %}
+{% endblock %}

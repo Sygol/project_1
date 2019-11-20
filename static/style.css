@@ -1,0 +1,246 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  line-height: 1.7;
+  background-image: linear-gradient(to right, rgba(86,204,242, 0.7), rgba(47,128,237, 0.7));
+
+
+}
+
+.navbar{
+  font-size: 1.8rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.navbar-nav{
+  padding-left: 5rem;
+}
+
+
+.ml-auto > .nav-item{
+  padding-right: 5rem;
+}
+
+.page_margin{
+    margin: 2.5%;
+    }
+
+.form {
+    margin: 8% auto 0 auto;
+    width: 50%;
+    }
+
+.header {
+    padding-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 550;
+    }
+
+.alert-danger{
+    width: 50%;
+    margin: 30px auto;
+
+    }
+
+#password__alert{
+    display: none;
+}
+
+.hello{
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    }
+
+.criteria{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+}
+.criterium{
+    font-size: 2.6rem;
+    padding-left: 5rem;
+}
+.criterium:first-child{
+    padding-left: 0rem;
+}
+
+.change__criteria{
+    font-size: 2rem;
+    margin-left: 5rem;
+}
+.list-group-item{
+    margin-top: 1%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000;
+
+}
+
+.book__title{
+    font-size: 2.6rem;
+    font-weight: 650;
+    padding-left: 5rem;
+    letter-spacing: 0.3rem;
+}
+
+.book__author{
+    font-size: 2.2rem;
+    font-weight: 550;
+    letter-spacing: 0.3rem;
+}
+
+.header__books{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+  }
+
+
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color: #939393;
+
+
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: gold;
+
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.star{
+    font-size: 180%;
+}
+
+.unchecked{
+    color: #939393;;
+}
+
+.checked{
+    color: gold;
+}
+
+.book_info{
+    width:50%;
+    margin:2% auto;
+
+}
+
+.book_detail{
+    font-size: 3rem;
+    font-weight: 550;
+}
+
+.book_details{
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+
+.book_detail--minor{
+    font-size: 2.4rem;
+    padding-right: 3rem;
+}
+
+
+.header--smaller{
+    font-size: 2.8rem;
+    font-weight: 530;
+    margin-top: 3rem;
+}
+
+
+.review{
+    background-color: white;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    border: 1px solid #939393;
+    border-radius: 2rem;
+}
+
+.review__email{
+    font-weight: 550;
+}
+textarea{
+    width: 100%;
+    margin-top: 1rem;
+    }
+
+.form-control{
+  font-size: 1.8rem;
+}
+
+label{
+  font-size: 1.2rem;
+}
+
+a:link, a:active{
+  text-decoration: none;
+}
+
+.btn{
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}

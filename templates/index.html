@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+</head>
+<body>
+    <header>
+        <h2>Hello, books lover!</h2>
+        {% if session.user_id %}
+            <div>
+              <a href="{{ url_for('books_search')}}"><button class="button_one">BOOKS SEARCH</button></a>
+            </div>
+        {% else %}
+            <div>
+              <a href="{{ url_for('login')}}"><button class="button_one">LOGIN</button></a>
+            </div>
+            <div>
+              <a href="{{ url_for('registration')}}"><button class="button_two">REGISTER</button></a>
+            </div>
+        {% endif %}
+    </header>
+</body>

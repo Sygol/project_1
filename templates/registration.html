@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<div class="form registration_form">
+  {% if session.user_id %}
+    <h2 class="header header__login">You are already registered.</h2>
+  {% else %}
+    <h2 class="header header__registration">Register here</h2>
+    <form action="{{ url_for('registration') }}" method="POST" onSubmit="return checkPassword(this)">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" name="email" class="form-control form-control-lg" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input type="password" name="password1" class="form-control form-control-lg" id="password1" placeholder="Password" required>
+      </div>
+      <div class="form-group">
+        <label for="password2">Confirm password</label>
+        <input type="password" class="form-control form-control-lg" id="password2" placeholder="Password" required>
+      </div>
+      <input type = submit value = "Submit" class="btn btn-primary btn-lg">
+    </form>
+  {% endif %}
+</div>
+<div class="alert alert-danger" role="alert" id="password__alert">
+    Passwords do not match!
+</div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-danger" role="alert" id="user__alert">
+      {{ messages.0 }}
+    </div>
+
+  {% endif %}
+{% endwith %}
+
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+{% endblock %}
