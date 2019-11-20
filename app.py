@@ -34,6 +34,9 @@ db = scoped_session(sessionmaker(bind=engine))
 #
 API_KEY = os.getenv("API_KEY")
 
+curs = db.cursor()
+curs.execute("ROLLBACK")
+db.commit()
 
 def login_required(f):
     @wraps(f)
@@ -126,7 +129,7 @@ def books():
 def book(book_id):
     if request.method == 'POST':
         if not db.execute("SELECT * FROM book_reviews WHERE user_id=:user_id AND book_id=:book_id",
-                   {"user_id" : session['user_id'], "book_id" : book_id}).first():
+                   {"user_id" : session['user_id'], "book_id": book_id}).first():
             rating = request.form.get('rating')
             review = request.form.get('review')
             db.execute("INSERT INTO book_reviews (user_id, book_id, rating, review) VALUES (:user_id, :book_id, :rating, :review)",{
