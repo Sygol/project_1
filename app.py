@@ -31,12 +31,14 @@ Session(app)
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
+connection = engine.raw_connection()
 #
 API_KEY = os.getenv("API_KEY")
 
-curs = db.cursor()
+curs = connection.cursor()
 curs.execute("ROLLBACK")
-db.commit()
+connection.commit()
+
 
 def login_required(f):
     @wraps(f)
