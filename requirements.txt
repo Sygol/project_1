@@ -8,3 +8,4 @@ flask_login
 requests
 Flask-Scss
 python-dotenv
+gunicorn
