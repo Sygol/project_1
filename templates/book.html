@@ -20,7 +20,7 @@
     {% if not user_review %}
       <div class="user_review">
         <h4 class="header--smaller">Leave your review</h4>
-        <form action="{{ url_for('book', book_id=book.id) }}" method="POST">
+        <form action="{{ url_for('book', book_id=book.id) }}" method="POST" onsubmit="return isRating()">
             <div style="overflow: hidden;">
                 <fieldset class="rating">
                     <input type="radio" id="star5" name="rating" value="5" /><label for="star5">5 stars</label>
@@ -93,4 +93,5 @@
         {% endfor %}
     {% endif %}
 </div>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
 {% endblock %}

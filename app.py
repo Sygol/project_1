@@ -104,7 +104,6 @@ def logout():
 @app.route("/books-search", methods=['POST','GET'])
 @login_required
 def books_search():
-
     return render_template('books_search.html')
 
 
